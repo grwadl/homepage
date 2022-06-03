@@ -8,6 +8,7 @@
     --main-bg-color:#202020;
     --main-font: 'Manrope', sans-serif;
     --main-title-color: #DEDEDE;
+    --second-text-color:#959595;
 }
 body{
     width: 100vw;
@@ -15,14 +16,14 @@ body{
     background-color: var(--main-bg-color);
     font-family: var(--main-font);
 }
-.wrapper{
+.main__wrapper{
     max-width: 1218px;
     padding: 0 24px;
     margin: 0 auto;
 }
 .nav{
-    padding: 20px 0;
-    height: 80px;
+    padding: 10px 0;
+    height: 70px;
     width: 100%;
     background: rgba(50, 50, 50, 0.7);
 }
@@ -32,7 +33,7 @@ body{
     align-items: center;
     max-width: 1218px;
     padding: 0 24px;
-    margin: 0 auto;
+    margin: 3px auto 0 auto;
 }
 .nav .nav__title{
     flex:0 1 130px;
@@ -75,3 +76,92 @@ body{
     text-decoration: none;
     transition-duration: .3s;
 }
+.main{
+    padding-top: 129px;
+    width: 100vw;
+    height: 100vh;
+}
+@media (max-width:707px) {
+    .main{
+        padding-top: 72px;
+    }
+}
+.main__wrapper .main__photo-personalInfo{
+    display: flex;
+}
+@media (max-width: 707px) {
+    .main__wrapper .main__photo-personalInfo{
+        flex-direction: column;
+    }
+    .main__wrapper .main__photo-personalInfo .main__text{
+        order: 2;
+    }
+}
+.main__wrapper .main__photo-personalInfo .main__text{
+    flex:0 1 762px;
+    margin: 0 15px;
+}
+@media (max-width:940px) {
+    .main__wrapper .main__photo-personalInfo .main__text{
+        flex:0 1 562px;
+        margin: 0 15px;
+    }
+}
+.main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p{
+    font-size: 68px;
+    color: var(--main-title-color);
+    max-width: 594px;
+    line-height: 109%;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+}
+@media (max-width:940px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p{
+        font-size: 48px;
+    }
+}
+@media (max-width:707px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p{
+        font-size: 36px;
+    }
+}
+@media (max-width:344px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p{
+        font-size: 24px;
+    }
+}
+.main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-subText p{
+    font-weight: 600;
+    margin-top: 24px;
+    max-width: 487px;
+    font-size: 24px;
+    color: var(--second-text-color);
+    line-height: 150%;
+    letter-spacing: -0.5px;
+}
+@media (max-width:940px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-subText p{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+}
+.main__wrapper .main__photo-personalInfo .main__photoWrapper{
+    flex: 0 1 400px;
+    min-height: 0;
+}
+.main__wrapper .main__photo-personalInfo .main__photoWrapper img{
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+@media (max-width: 707px) {
+    .main__wrapper .main__photo-personalInfo .main__photoWrapper{
+        max-width: 300px;
+        margin: 0 auto 64px auto;
+        flex: unset;
+    }
+}
+
+
