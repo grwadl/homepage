@@ -29,6 +29,9 @@ body {
 
 .nav {
     padding: 10px 0;
+    position: fixed;
+    z-index: 2;
+    backdrop-filter: blur(10px);
     height: 70px;
     width: 100%;
     background: rgba(50, 50, 50, 0.7);
@@ -246,14 +249,15 @@ body {
     max-height: 566px;
     transition-duration: .3s;
 }
-@media(max-width:505px){
-    .main__languages .main__languagesList .main__languageItem{
-        flex:0 1 100%;
-        top: 0!important;
+
+@media (max-width: 505px) {
+    .main__languages .main__languagesList .main__languageItem {
+        flex: 0 1 100%;
+        top: 0 !important;
     }
 }
 
-.main__languages .main__languagesList .main__languageItem:after {
+.blackBg:after {
     opacity: 0;
     position: absolute;
     cursor: pointer;
@@ -264,14 +268,58 @@ body {
     left: 0;
     transition-duration: .3s;
     background: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
 }
 
-.main__languages .main__languagesList .main__languageItem:hover:after {
+.blackBg:hover::after {
     opacity: 1;
+    transition-duration: .3s;
 }
 
 .main__languages .main__languagesList .main__languageItem img {
+    display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.title p {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 49px;
+    color: var(--main-title-color);
+}
+
+.main__addTechnologies-title.title p {
+    text-align: center;
+    margin: 400px auto 65px auto;
+}
+
+.main__addTechologies-list .main__addTechologies-items {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item {
+    position: relative;
+    list-style: none;
+    flex: 0 1 calc((100% / 3) - 24px);
+}
+
+@media (max-width: 504px) {
+    .main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item {
+        flex: 0 1 100%;
+    }
+}
+.main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item a{
+    height: 100%;
+}
+
+.main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item img {
+    height: 100%;
+    width: 100%;
+    display: block;
     object-fit: cover;
 }
