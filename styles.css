@@ -1,77 +1,325 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --main-bg-color:#202020;
+
+:root {
+    --main-bg-color: #202020;
     --main-font: 'Manrope', sans-serif;
     --main-title-color: #DEDEDE;
+    --second-text-color: #959595;
 }
-body{
+
+body {
     width: 100vw;
     height: 100vh;
     background-color: var(--main-bg-color);
     font-family: var(--main-font);
+    overflow-x: hidden;
 }
-.wrapper{
+
+.main__wrapper {
     max-width: 1218px;
     padding: 0 24px;
     margin: 0 auto;
 }
-.nav{
-    padding: 20px 0;
-    height: 80px;
+
+.nav {
+    padding: 10px 0;
+    position: fixed;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    height: 70px;
     width: 100%;
     background: rgba(50, 50, 50, 0.7);
 }
-.nav__wrapper{
+
+.nav__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1218px;
     padding: 0 24px;
-    margin: 0 auto;
+    margin: 3px auto 0 auto;
 }
-.nav .nav__title{
-    flex:0 1 130px;
+
+.nav .nav__title {
+    flex: 0 1 130px;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-.nav .nav__title:hover .nav__logoText{
-    color:white;
+
+.nav .nav__title:hover .nav__logoText {
+    color: white;
     transition-duration: .3s;
 }
-.nav .nav__title .nav__logoWrapper{
+
+.nav .nav__title .nav__logoWrapper {
     width: 29px;
     height: 42px;
     margin-right: 11px;
 }
-.nav .nav__title .nav__logoText{
+
+.nav .nav__title .nav__logoText {
     color: var(--main-title-color);
     font-size: 20px;
     transition-duration: .3s;
 }
-.nav__linkWrapper{
+
+.nav__linkWrapper {
     flex: 0 1 281px;
 }
-.nav__linkWrapper .nav__links{
+
+.nav__linkWrapper .nav__links {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .nav__linkWrapper .nav__links .nav__linkItem {
     list-style: none;
 }
-.nav__linkWrapper .nav__links .nav__linkItem:hover a{
-    color:white;
+
+.nav__linkWrapper .nav__links .nav__linkItem:hover a {
+    color: white;
     transition-duration: .3s;
 }
-.nav__linkWrapper .nav__links .nav__linkItem a{
-    color:var(--main-title-color);
+
+.nav__linkWrapper .nav__links .nav__linkItem a {
+    color: var(--main-title-color);
     font-size: 18px;
     text-decoration: none;
     transition-duration: .3s;
+}
+
+.main {
+    padding-top: 129px;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (max-width: 707px) {
+    .main {
+        padding-top: 72px;
+    }
+}
+
+.main__wrapper .main__photo-personalInfo {
+    display: flex;
+}
+
+@media (max-width: 707px) {
+    .main__wrapper .main__photo-personalInfo {
+        flex-direction: column;
+    }
+
+    .main__wrapper .main__photo-personalInfo .main__text {
+        order: 2;
+    }
+}
+
+.main__wrapper .main__photo-personalInfo .main__text {
+    flex: 0 1 762px;
+    margin: 0 15px;
+}
+
+@media (max-width: 940px) {
+    .main__wrapper .main__photo-personalInfo .main__text {
+        flex: unset;
+        margin: 0 15px;
+    }
+}
+
+.main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p {
+    font-size: 68px;
+    color: var(--main-title-color);
+    max-width: 594px;
+    line-height: 109%;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+}
+
+@media (max-width: 940px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 707px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 344px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-title p {
+        font-size: 24px;
+    }
+}
+
+.main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-subText p {
+    font-weight: 600;
+    margin-top: 24px;
+    max-width: 487px;
+    font-size: 24px;
+    color: var(--second-text-color);
+    line-height: 150%;
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 940px) {
+    .main__wrapper .main__photo-personalInfo .main__text .main__personalInfo-subText p {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+}
+
+.main__wrapper .main__photo-personalInfo .main__photoWrapper {
+    flex: 0 1 400px;
+    min-height: 0;
+}
+
+.main__wrapper .main__photo-personalInfo .main__photoWrapper img {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@media (max-width: 707px) {
+    .main__wrapper .main__photo-personalInfo .main__photoWrapper {
+        max-width: 300px;
+        margin: 0 auto 64px auto;
+        flex: unset;
+    }
+}
+
+.main__mainLanguages .main__mainLanguages-title {
+    display: flex;
+    margin: 157px 0 80px 0;
+}
+
+.main__mainLanguages .main__mainLanguages-title img {
+    margin-right: 30px;
+}
+
+.main__mainLanguages .main__mainLanguages-title .main__mainLanguages-title-text {
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--second-text-color);
+}
+
+.main__languages {
+    width: 100%;
+}
+
+.main__languages .main__languagesList {
+    display: flex;
+    margin: 0 auto;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.main__languages .main__languagesList li:nth-child(2) {
+    top: 160px;
+}
+
+.main__languages .main__languagesList li:nth-child(1) {
+
+}
+
+.main__languages .main__languagesList li:nth-child(4) {
+    top: 160px;
+}
+
+.main__languages .main__languagesList .main__languageItem {
+    position: relative;
+    cursor: pointer;
+    flex: 0 1 calc(50% - 24px);
+    list-style: none;
+    max-height: 566px;
+    transition-duration: .3s;
+}
+
+@media (max-width: 505px) {
+    .main__languages .main__languagesList .main__languageItem {
+        flex: 0 1 100%;
+        top: 0 !important;
+    }
+}
+
+.blackBg:after {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition-duration: .3s;
+    background: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+.blackBg:hover::after {
+    opacity: 1;
+    transition-duration: .3s;
+}
+
+.main__languages .main__languagesList .main__languageItem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title p {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 49px;
+    color: var(--main-title-color);
+}
+
+.main__addTechnologies-title.title p {
+    text-align: center;
+    margin: 400px auto 65px auto;
+}
+
+.main__addTechologies-list .main__addTechologies-items {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item {
+    position: relative;
+    list-style: none;
+    flex: 0 1 calc((100% / 3) - 24px);
+}
+
+@media (max-width: 504px) {
+    .main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item {
+        flex: 0 1 100%;
+    }
+}
+.main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item a{
+    height: 100%;
+}
+
+.main__addTechologies-list .main__addTechologies-items .main__addTechnologies-item img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
 }
