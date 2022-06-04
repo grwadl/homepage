@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 <head>
+    <meta charset="UTF-8"/>
+    <title>Résumé</title>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Résumé</title>
 </head>
 <body>
-
 <nav class="nav">
     <div class="nav__wrapper">
+        <div class="nav__burger-wrapper">
+            <span class="nav__burger-menu"></span>
+        </div>
         <div class="nav__title">
             <div class="nav__logoWrapper"><img src="./img/logo.svg" alt="logo"></div>
             <div class="nav__logoText">Resume</div>
         </div>
         <div class="nav__linkWrapper">
             <ul class="nav__links">
-                <li class="nav__linkItem"><a href="">Home</a></li>
-                <li class="nav__linkItem"><a href="">Work</a></li>
-                <li class="nav__linkItem"><a href="">Contact</a></li>
+                <li class="nav__linkItem" id="home">Home</li>
+                <li class="nav__linkItem" id="technologies">Technologies</li>
+                <li class="nav__linkItem" id="projects">Projects</li>
+                <li class="nav__linkItem" id="info">Info</li>
             </ul>
         </div>
     </div>
 </nav>
 <main class="main">
     <div class="main__wrapper">
-        <section class="main__photo-personalInfo">
+        <section class="main__photo-personalInfo" id="homeEl">
             <div class="main__text">
                 <div class="main__personalInfo-title">
-                    <p>Hi, I am Vadim
+                    <p>Hi, I am Vadim,
                         a Front-end developer
                         based in Kharkiv.
                     </p>
                 </div>
                 <div class="main__personalInfo-subText">
                     <p>
-                        I've been learning front-end development for 6 month, and I have a goal to start working as a web-developer!
+                        I've been learning front-end development for 6 month, and I have a goal to start working as a
+                        web-developer!
                     </p>
                 </div>
             </div>
@@ -42,7 +48,156 @@
                 <img src="./img/me.jpg" alt="me" class="main__myPhoto">
             </div>
         </section>
+        <section class="main__mainLanguages" id="technologiesEl">
+            <div class="main__mainLanguages-title">
+                <img class="main__mainLanguages-icon" src="./img/Arrow%201.svg" alt="arrow">
+                <p class="main__mainLanguages-title-text">main technologies</p>
+            </div>
+            <div class="main__languages">
+                <ul class="main__languagesList">
+                    <li class="main__languageItem blackBg"><a href="https://www.typescriptlang.org/"
+                                                              target="_blank"><img src="./img/ts.svg" alt="ts"
+                                                                                   class="main__languageItem-logo"></a>
+                    </li>
+                    <li class="main__languageItem blackBg"><a
+                            href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank"><img
+                            src="./img/js.png" alt="js"
+                            class="main__languageItem-logo"></a>
+                    </li>
+                    <li class="main__languageItem blackBg"><a
+                            href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics"
+                            target="_blank"><img src="./img/css.jpg" alt="css" class="main__languageItem-logo"></a>
+                    </li>
+                    <li class="main__languageItem blackBg"><a href="https://developer.mozilla.org/ru/docs/Web/HTML"
+                                                              target="_blank"><img src="./img/html.jpg" alt="html"
+                                                                                   class="main__languageItem-logo"></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="main__addTechnologies">
+            <div class="main__addTechnologies-title title">
+                <p>Additional technologies</p>
+            </div>
+            <div class="main__addTechologies-list">
+                <ul class="main__addTechologies-items">
+                    <li class="main__addTechnologies-item blackBg">
+                        <a href="https://ru.reactjs.org/" target="_blank"><img src="./img/react.png" alt="react"
+                                                                               class="main__addTechnologies-img"></a>
+                    </li>
+                    <li class="main__addTechnologies-item blackBg">
+                        <a href="https://redux.js.org/" target="_blank"><img src="./img/redux.png" alt="redux"
+                                                                             class="main__addTechnologies-img"></a>
+                    </li>
+                    <li class="main__addTechnologies-item blackBg">
+                        <a href="https://nodejs.org/uk/" target="_blank"><img src="./img/nodejs.jpg" alt="nodejs"
+                                                                              class="main__addTechnologies-img"></a>
+                    </li>
+                    <li class="main__addTechnologies-item blackBg">
+                        <a href="https://webpack.js.org/" target="_blank"><img src="./img/webpack.jpg" alt="webpack"
+                                                                               class="main__addTechnologies-img"></a>
+                    </li>
+                    <li class="main__addTechnologies-item blackBg">
+                        <a href="https://gulpjs.com/" target="_blank"><img src="./img/gulp.png" alt="gulp"
+                                                                           class="main__addTechnologies-img"></a>
+                    </li>
+                    <li class="main__addTechnologies-item blackBg">
+                        <a href="https://mui.com/" target="_blank"><img src="./img/mui.png" alt="mui"
+                                                                        class="main__addTechnologies-img"></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="main__myProjects" id="projectsEl">
+            <div class="main__myProjects-title title">
+                <p>My recent projects</p>
+                <div class="main__myProjects-pop-up">
+                    <span class="main__MyProjects-pop-up-text">Also I'm working on full-stack weather app on Typescript now</span>
+                </div>
+            </div>
+            <div class="main__myProjectsList">
+                <ul class="main__myProjects">
+                    <li class="main__myProjectItem blackBg"><a href="https://github.com/grwadl/socialNetworkImages"
+                                                               target="_blank">
+                        <img src="./img/imgNetwork.jpg" alt="imgSocialNetwork">
+                    </a>
+                    </li>
+                    <li class="main__myProjectItem blackBg"><a href="https://github.com/grwadl/github-profiles-app"
+                                                               target="_blank">
+                        <img src="./img/git-hub-profiles.jpg" alt="gitHubProfiles">
+                    </a>
+                    </li>
+                    <li class="main__myProjectItem blackBg"><a href="https://github.com/grwadl/homepage"
+                                                               target="_blank">
+                        <img src="./img/BSA_porfolio.png" alt="BSA-portfolio">
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="main__myPersonality" id="infoEl">
+            <div class="main__aditionalInfoAboutMe title">
+                <p>More info about me</p>
+            </div>
+            <div class="main__educationWrapper personalInfoWrapper">
+                <p class="main__educationTitle subtitle">Education</p>
+                <span class="main__plus-btn"></span>
+                <div class="main__educationInfo info">
+                    <p>I am a 1st year student of NAU "KHAI" I study on the faculty of Software Engineering. I started
+                        learning Web-development in October 2021. Firstly I've learned basics of JS, then started
+                        learning CSS and HTML. I was practising on doing MPA and landind websites, during winter. In
+                        March 2022 I've started learning React.js, since then I've learned a lot of additional stuff
+                        like Redux/UI libraries too. In May 2022 started learning TypeScript. I have some pet-projects
+                        in my Github profile"</p>
+                </div>
+            </div>
+            <div class="main__softSkillsWrapper personalInfoWrapper">
+                <p class="main__softSkillsTitle subtitle">My soft skills</p>
+                <span class="main__plus-btn"></span>
+                <div class="main__softSkillsInfo info">
+                    <p>I'm a bit funny, but too shy. Currently, I'm working to improve my personality, and became more
+                        sociable</p>
+                </div>
+            </div>
+            <div class="main__EnglishWrapper personalInfoWrapper">
+                <p class="main__EnglishWTitle subtitle">My english level</p>
+                <span class="main__plus-btn"></span>
+                <div class="main__englishInfo info">
+                    <p>I've been visiting extra courses when I was in school. After that, i passed well after-school
+                        exams and now I have good knowledge of this language. Nowadays, I don't attend some courses, but
+                        watch videos or different tutorials only in English, by the way I've set system language to
+                        English. When I went to my uni, on the first English lesson we wrote test to be divided into
+                        knowledge groups. I passed test well and was divided to B2 group, but I suppose my
+                        level is a bit lower than B2, something kinda between B1 and B2 </p>
+                </div>
+            </div>
+            <div class="main__whyBinaryWrapper personalInfoWrapper">
+                <p class="main__whyBinaryTitle subtitle">Why I've chosen Binary Studio?</p>
+                <span class="main__plus-btn"></span>
+                <div class="main__whyBinaryInfo info">
+                    <p>I've seen your company a lot of times, it's quite popular, isn't it? So, when i saw that BSA is
+                        opening for whole summer i decided to take a part in it. I gonna be the one who come to
+                        the end of academy</p>
+                </div>
+            </div>
+        </section>
     </div>
 </main>
+<footer class="footer">
+    <div class="footer__wrapper">
+        <section class="footer__madeBy">
+            <p>Made by <span class="footer__myName">Vadim Grashchenko(grwadl)</span> - 2022</p>
+        </section>
+        <section class="footer__mySocial">
+            <a href="https://www.instagram.com/w6d6g6/" target="_blank"><img src="./img/inst.svg" alt="instagram"
+                                                                             class="footer__iconSocial"></a>
+            <a href="https://t.me/w6d6g6" target="_blank"><img src="./img/tg.svg" alt="telegram"
+                                                               class="footer__iconSocial"></a>
+            <a href="https://github.com/grwadl" target="_blank"><img src="./img/gh.svg" alt="github"
+                                                                     class="footer__iconSocial"></a>
+        </section>
+    </div>
+</footer>
+<script src="./script.js"></script>
 </body>
 </html>
