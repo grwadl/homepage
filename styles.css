@@ -287,6 +287,7 @@ body {
 }
 
 .title p {
+    text-align: center;
     font-weight: 700;
     font-size: 36px;
     line-height: 49px;
@@ -395,4 +396,27 @@ body {
     display: block;
     object-fit: cover;
     height: 100%;
+}
+.main__aditionalInfoAboutMe.title{
+    margin: 240px auto 56px auto;
+}
+.personalInfoWrapper{
+    position: relative;
+    margin: 20px auto;
+}
+.subtitle{
+    color:var(--second-text-color);
+    font-size: 24px;
+}
+.main__plus-btn,.main__plus-btn:after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    background-color: var(--second-text-color);
+    height: 2px;
+    width: 20px;
+}
+.main__plus-btn:after{
+    transform: rotate(90deg);
 }
