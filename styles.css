@@ -122,7 +122,6 @@ body {
 
     .nav__burger-wrapper:after {
         top: 18px;
-        right: 1px;
     }
 
     .nav.active .nav__burger-wrapper:before {
@@ -135,6 +134,7 @@ body {
     .nav.active .nav__burger-wrapper:after {
         transform: rotate(-45deg);
         transition-duration: .3s;
+        right: 1px;
     }
 
     .nav.active .nav__burger-menu {
@@ -202,7 +202,7 @@ body {
 
 @media (max-width: 707px) {
     .main {
-        padding-top: 72px;
+        padding-top: 86px;
     }
 }
 
