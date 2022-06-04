@@ -79,6 +79,7 @@ body {
 
 .nav__linkWrapper .nav__links {
     display: flex;
+    gap:30px;
     align-items: center;
     justify-content: space-between;
 }
@@ -87,16 +88,17 @@ body {
     list-style: none;
 }
 
-.nav__linkWrapper .nav__links .nav__linkItem:hover a {
+.nav__linkWrapper .nav__links .nav__linkItem:hover {
     color: white;
     transition-duration: .3s;
 }
 
-.nav__linkWrapper .nav__links .nav__linkItem a {
+.nav__linkWrapper .nav__links .nav__linkItem {
     color: var(--main-title-color);
     font-size: 18px;
     text-decoration: none;
     transition-duration: .3s;
+    cursor: pointer;
 }
 
 .main {
