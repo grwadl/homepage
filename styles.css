@@ -4,11 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
-    margin: 0;
-}
 
+}
+body.disabled{
+    overflow: hidden;
+}
 :root {
     --main-bg-color: #202020;
     --main-font: 'Manrope', sans-serif;
@@ -19,6 +19,8 @@ body{
 body {
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: var(--main-bg-color);
     font-family: var(--main-font);
     overflow-x: hidden;
@@ -42,13 +44,83 @@ body {
 
 .nav__wrapper {
     display: flex;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
     max-width: 1218px;
     padding: 0 24px;
     margin: 3px auto 0 auto;
 }
+.nav__burger-wrapper{
+    display:none;
+}
 
+@media(max-width: 641px){
+    .nav__burger-wrapper{
+    display:block!important;
+}
+    .nav.active{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+    .nav.active .nav__wrapper{
+        display: block;
+    }
+    .nav__linkWrapper .nav__links{
+        opacity: 0;
+        transform: translate(-800px);
+    }
+    .nav.active .nav__linkWrapper .nav__links{
+        display: block!important;
+        opacity: 1;
+        transform: translate(0);
+        transition-duration: .3s;
+        margin-top: 100px;
+        text-align: center;
+    }
+    .nav.active .nav__linkWrapper .nav__links .nav__linkItem{
+        margin: 40px;
+        font-size: 32px!important;
+    }
+    .nav__burger-wrapper{
+        width: 27px;
+        height: 27px;
+        right: 24px;
+        top: 24px;
+        content:'';
+        position: absolute;
+    }
+    .nav__burger-menu,.nav__burger-menu:after,.nav__burger-menu:before{
+        content:'';
+        width: 27px;
+        height: 2px;
+        position: absolute;
+        background-color: #fff;
+    }.nav__burger-menu{
+        top: 10px;
+        right: 0;
+    }.nav__burger-menu:before{
+        top:-8px;
+    }.nav__burger-menu:after{
+        top: 8px;
+    }
+     .nav.active .nav__burger-menu:before{
+         transform: rotate(45deg);
+         right: 9px;
+         top:-2px;
+         transition-duration: .3s;
+     }
+    .nav.active .nav__burger-menu:after{
+        transform: rotate(-45deg);
+        right: 10px;
+        top:-1px;
+        transition-duration: .3s;
+    }
+    .nav.active .nav__burger-menu{
+        width: 0;
+    }
+}
 .nav .nav__title {
     flex: 0 1 130px;
     display: flex;
