@@ -334,7 +334,34 @@ body {
 
 
 .main__myProjects-title.title {
-    margin: 240px 0 56px 0;
+    margin: 240px auto 56px auto;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.main__myProjects-pop-up{
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    top: 47px;
+    max-width: 300px;
+    border:2px solid black;
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    z-index: 1;
+    transition-duration: .3s;
+}
+.main__myProjects-title.title:hover>.main__myProjects-pop-up{
+    opacity: 1;
+    transition-duration: .3s;
+}
+.main__myProjects-pop-up span{
+    color: var(--main-title-color);
+    font-size: 18px;
 }
 @media (max-width: 707px) {
     .main__myProjects-title.title {
