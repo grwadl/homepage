@@ -104,7 +104,6 @@ body {
 .main {
     padding-top: 129px;
     width: 100vw;
-    height: 100vh;
 }
 
 @media (max-width: 707px) {
@@ -430,6 +429,7 @@ body {
 .info{
     opacity: 0;
     height: 0;
+    pointer-events: none;
     margin: 0;
     text-align: justify;
     color:var(--main-title-color);
@@ -438,12 +438,23 @@ body {
     transition-duration: .3s;
     transform: scale(0.9);
 }
+.info p{
+    height: 0;
+    overflow: hidden;
+}
 .personalInfoWrapper.active .info{
     opacity: 1;
     height: auto;
     margin: 20px 0;
     transform: scale(1);
     transition-duration: .3s;
+}
+.personalInfoWrapper.active .info p{
+    height: unset;
+    overflow: unset;
+}
+.personalInfoWrapper.active .main__plus-btn:hover::before,.main__plus-btn:hover::after{
+    animation: none!important;
 }
 .main__plus-btn{
     flex: 0 0 20px;
@@ -459,10 +470,7 @@ body {
     transition-duration: .3s
 }
 .main__plus-btn:hover::before{
-    animation: 1s beforeRotate;
-}
-.main__plus-btn:hover::after{
-    animation: 1s afterRotate;
+    animation: 1s beforeRotate!important;
 }
 @keyframes beforeRotate {
     25%{
@@ -470,14 +478,6 @@ body {
     }
     50%{
         transform: rotate(0deg) ;
-    }
-}
-@keyframes afterRotate {
-    25%{
-        transform: rotate(70deg);
-    }
-    50%{
-        transform: rotate(90deg) ;
     }
 }
 .main__plus-btn::before,.main__plus-btn:after{
@@ -492,4 +492,59 @@ body {
 }
 .main__plus-btn:after{
     transform: rotate(90deg);
+}
+.footer{
+    position: relative;
+}
+.footer::before{
+    width: 100%;
+    height: 2px;
+    content:'';
+    position: absolute;
+    background-color: var(--second-text-color);
+}
+.footer .footer__wrapper{
+    max-width: 1218px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 119px auto 0 auto;
+    padding: 48px 24px 36px 24px;
+}
+.footer .footer__wrapper .footer__madeBy p{
+    color:var(--second-text-color);
+    font-size: 16px;
+}
+.footer .footer__wrapper .footer__madeBy .footer__myName{
+    color:var(--main-title-color)!important;
+}
+.footer .footer__wrapper .footer__madeBy{
+    flex: 0 1 320px;
+}
+
+.footer .footer__wrapper .footer__mySocial{
+    flex: 0 1 293px;
+}
+@media (max-width:675px) {
+    .footer .footer__wrapper{
+        justify-content: center;
+    }
+    .footer .footer__wrapper .footer__mySocial{
+        order:1;
+        margin-bottom: 20px;
+        flex:0 1 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .footer .footer__wrapper .footer__madeBy{
+        order:2;
+    }
+}
+.footer .footer__wrapper .footer__mySocial a{
+    margin: 0 20px;
+}
+.footer .footer__wrapper .footer__mySocial a img{
+    width: 32px;
+    height: 32px;
 }
