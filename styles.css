@@ -403,14 +403,85 @@ body {
 .personalInfoWrapper{
     position: relative;
     margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.personalInfoWrapper.active .main__plus-btn::after{
+    transform: rotate(0deg);
+}
+.personalInfoWrapper.active .main__plus-btn::after,.main__plus-btn::before{
+    background-color: var(--main-title-color);
+    transition-duration: .3s;
 }
 .subtitle{
     color:var(--second-text-color);
-    font-size: 24px;
+    font-size: 26px;
+    flex: 1 1 300px;
+    max-width: 200px;
+    transition-duration: .3s;
 }
-.main__plus-btn,.main__plus-btn:after{
+.personalInfoWrapper.active .subtitle{
+    color:var(--main-title-color);
+    transition-duration: .3s;
+}
+.info{
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    text-align: justify;
+    color:var(--main-title-color);
+    font-size: 24px;
+    line-height: 150%;
+    transition-duration: .3s;
+    transform: scale(0.9);
+}
+.personalInfoWrapper.active .info{
+    opacity: 1;
+    height: auto;
+    margin: 20px 0;
+    transform: scale(1);
+    transition-duration: .3s;
+}
+.main__plus-btn{
+    flex: 0 0 20px;
+    width: 20px!important;
+    height: 20px!important;
+    content: "";
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+.main__plus-btn:hover::before,.main__plus-btn:hover::after{
+    background-color:white!important;
+    transition-duration: .3s
+}
+.main__plus-btn:hover::before{
+    animation: 1s beforeRotate;
+}
+.main__plus-btn:hover::after{
+    animation: 1s afterRotate;
+}
+@keyframes beforeRotate {
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(0deg) ;
+    }
+}
+@keyframes afterRotate {
+    25%{
+        transform: rotate(70deg);
+    }
+    50%{
+        transform: rotate(90deg) ;
+    }
+}
+.main__plus-btn::before,.main__plus-btn:after{
     position: absolute;
-    top: 0;
+    transition-duration: .3s;
+    top:7px;
     right: 0;
     content: "";
     background-color: var(--second-text-color);
